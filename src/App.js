@@ -18,7 +18,7 @@ function App() {
 
   //takes the location key from the city the user choosed 
   const getCityForLocationKey = () => {
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const base = 'https://dataservice.accuweather.com/locations/v1/cities/search';
     const addition = `?apikey=${apiKey}&q=${choosenLocation}`;
     fetch(base + addition)
       .then((res) => {
@@ -38,7 +38,7 @@ function App() {
   // according the location key gets the current weather of the choosen city
 
   const getCurrentWeather = (locationNameToKey) => {
-    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const base = 'https://dataservice.accuweather.com/currentconditions/v1/';
     const addition = `${locationNameToKey}?apikey=${apiKey}`
 
     fetch(base + addition)
@@ -73,7 +73,7 @@ function App() {
 
   //complete the name of the city that the user is typing
   const autoComplete = (locationName) => {
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/autocomplete';
+    const base = 'https://dataservice.accuweather.com/locations/v1/cities/autocomplete';
     const addition = `?apikey=${apiKey}&q=${locationName}`;
 
     fetch(base + addition)
@@ -92,7 +92,7 @@ function App() {
   }
 
   const fiveDaysForecasts = (locationNameToKey) => {
-    const base = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/`;
+    const base = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/`;
     const addition = `${locationNameToKey}?apikey=${apiKey}`;
     fetch(base + addition)
       .then((res) => {
